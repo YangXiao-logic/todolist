@@ -1,0 +1,8 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ task.title }}</h5>
+        <p class="card-text">{{ task.body }}</p>
+        <a class="btn btn-primary" herf="{{ url_for('toggle_task',task_id=task.id) }}">{% if task.is_finished %}
+            Finished{% else %}UnFinished{% endif %}</a>
+    </div>
+</div>

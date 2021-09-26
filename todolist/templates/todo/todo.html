@@ -1,0 +1,10 @@
+{% extends '../base.html' %}
+{% from 'bootstrap/form.html' import render_form %}
+
+{% block content %}
+    {{ render_form(form, action=request.full_path) }}
+
+    {% for task in tasks %}
+        {% include '_task.html' %}
+    {% endfor %}
+{% endblock %}
