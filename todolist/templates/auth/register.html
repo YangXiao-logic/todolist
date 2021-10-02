@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% from 'bootstrap/form.html' import render_form %}
 
-
 {% block content %}
     {{ render_form(form) }}
-    <a href="{{ url_for('.register') }}">Register</a>
-
-
 {% endblock %}

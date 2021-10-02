@@ -17,6 +17,7 @@ python-dotenv = "*"
 sqlalchemy = "*"
 wtforms = "*"
 flask-login = "*"
+flask-ckeditor = "*"
 
 [dev-packages]
 faker = "*"
