@@ -1,0 +1,31 @@
+
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-4">Category</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+            <a href="{{ url_for('todo.app') }}" class="nav-link text-light
+                    {% if request.path==url_for('todo.app') %} active
+                    {% endif %} "
+                    {% if request.path==url_for('todo.app') %} aria-current="true"
+                    {% endif %}>
+                All
+            </a>
+        </li>
+        <div class="categories">
+            {% for category in categories %}
+                {% include 'todo/_category.html' %}
+            {% endfor %}
+        </div>
+    </ul>
+    <hr>
+    <form method="POST">
+        <div class="input-group mb-3">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <input id="category-input" data-href="{{ url_for('todo.new_category') }}" type="text"
+                   placeholder="Create new category" autocomplete="off" autofocus required>
+        </div>
+    </form>
+</div>

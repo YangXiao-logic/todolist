@@ -2,10 +2,52 @@
 
 
 {% block content %}
-    <a href="{{ url_for('auth.login') }}">Get started</a>
-    <a href="#" class="btn btn-primary active" role="button" data-bs-toggle="button" aria-pressed="true">Active toggle
-        link</a>
-    <a class="btn btn-primary disabled" aria-disabled="true" role="button" data-bs-toggle="button">Disabled toggle
-        link</a>
+    {#    <img class="img-fluid" src="{{ url_for('static', filename='demo.png') }}">#}
+    <div class="text-center">
+        <img src="{{ url_for('static', filename='demo.png') }}" class="rounded" alt="demo">
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    {#                    <div class="carousel-item active">#}
+                    {#                        <img src="{{ url_for('static', filename='demo.png') }}" class="d-block w-100" alt="...">#}
+                    {#                    </div>#}
+                    {#                    <div class="carousel-item">#}
+                    {#                        <img src="..." class="d-block w-100" alt="...">#}
+                    {#                    </div>#}
+                    {#                    <div class="carousel-item">#}
+                    {#                        <img src="..." class="d-block w-100" alt="...">#}
+                    {#                    </div>#}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col text-center">
+                <a class="btn btn-primary align-content-around" href="{{ url_for('auth.login') }}" role="button">Get
+                    started</a>
+            </div>
+        </div>
+
+    </div>
+
 
 {% endblock %}

@@ -9,10 +9,11 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="bluelog" />
     <orderEntry type="module" module-name="todoism" />
-    <orderEntry type="module" module-name="to_do_list" />
+    <orderEntry type="module" module-name="bootstrap-5.1.1-examples" />
     <orderEntry type="module" module-name="albumy" />
+    <orderEntry type="module" module-name="bluelog" />
+    <orderEntry type="module" module-name="sayhello" />
   </component>
   <component name="TemplatesService">
     <option name="TEMPLATE_CONFIGURATION" value="Jinja2" />

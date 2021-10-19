@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+
+    <input type="radio" class="btn-check" name="btnradio" id="unfinished-task" autocomplete="off">
+    <label class="btn btn-outline-secondary position-relative" for="unfinished-task">Unfinished tasks
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary unfinished_count">
+    {{ unfinished_count }}</span></label>
+    <input type="radio" class="btn-check" name="btnradio" id="all-task" autocomplete="off" checked>
+    <label class="btn btn-outline-secondary position-relative" for="all-task">All tasks
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary all_count">
+    {{ all_count }}</span></label>
+    <input type="radio" class="btn-check" name="btnradio" id="finished-task" autocomplete="off">
+    <label class="btn btn-outline-secondary position-relative" for="finished-task">Finished tasks
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-secondary finished_count">
+    {{ finished_count }}</span></label>
+
+    </thead>
+    <tbody class="tasks">
+
+    {% for task in tasks %}
+        {% include 'todo/_task.html' %}
+    {% endfor %}
+    </tbody>
+</table>

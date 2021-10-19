@@ -1,0 +1,9 @@
+<li>
+    <a href="{{ url_for('todo.show_category',category_id = category.id) }} " class="nav-link text-white
+                {% if request.path==url_for('todo.show_category', category_id=category.id) %} active
+                    {% endif %} "
+            {% if request.path==url_for('todo.show_category', category_id=category.id) %} aria-current="true"
+            {% endif %}>
+        {{ category.name }}
+    </a>
+</li>

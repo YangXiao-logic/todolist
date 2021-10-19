@@ -3,8 +3,35 @@
 
 
 {% block content %}
-    {{ render_form(form) }}
-    <a href="{{ url_for('.register') }}">Register</a>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img class="img-fluid" src="{{ url_for('static', filename='auth1.jpg') }}">
+            </div>
+            <div class="col text-center position-relative">
+                <form class="form-signin position-absolute top-50 start-50 translate-middle" method="post">
+                    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+                    {{ form.csrf_token }}
+                    <div class="form-floating">
+                        {{ form.username(class="form-control",id="floatingInput") }}
+                        {{ form.username.label(for="floatingInput") }}
+                    </div>
+                    <div class="form-floating">
+                        {{ form.password(class="form-control",id="floatingPassword") }}
+                        {{ form.password.label(for="floatingPassword") }}
+                    </div>
 
+                    <div class="checkbox mb-3">
+                        <label>
+                            {{ form.remember }}
+                            {{ form.remember.label }}
+                        </label>
+                    </div>
+                    {{ form.submit(class="w-100 btn btn-lg btn-primary") }}
+                    <p>Have no account?<a href="{{ url_for('.register') }}">Register</a>here</p>
+                </form>
 
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -3,9 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://G:/aExerciseProject/albumy/.idea/albumy.iml" filepath="G:/aExerciseProject/albumy/.idea/albumy.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../bluelog/.idea/bluelog.iml" filepath="$PROJECT_DIR$/../bluelog/.idea/bluelog.iml" />
-      <module fileurl="file://$USER_HOME$/Desktop/learn/to_do_list/.idea/to_do_list.iml" filepath="$USER_HOME$/Desktop/learn/to_do_list/.idea/to_do_list.iml" />
-      <module fileurl="file://G:/aExerciseProject/todoism/.idea/todoism.iml" filepath="G:/aExerciseProject/todoism/.idea/todoism.iml" />
+      <module fileurl="file://G:/aExerciseProject/bluelog/.idea/bluelog.iml" filepath="G:/aExerciseProject/bluelog/.idea/bluelog.iml" />
+      <module fileurl="file://G:/aExerciseProject/bootstrap-5.1.1-examples/.idea/bootstrap-5.1.1-examples.iml" filepath="G:/aExerciseProject/bootstrap-5.1.1-examples/.idea/bootstrap-5.1.1-examples.iml" />
+      <module fileurl="file://G:/aExerciseProject/sayhello/.idea/sayhello.iml" filepath="G:/aExerciseProject/sayhello/.idea/sayhello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../todoism/.idea/todoism.iml" filepath="$PROJECT_DIR$/../todoism/.idea/todoism.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/todolist.iml" filepath="$PROJECT_DIR$/.idea/todolist.iml" />
     </modules>
   </component>

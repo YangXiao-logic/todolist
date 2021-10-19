@@ -1,8 +1,74 @@
-<div class="card">
-    <div class="card-body">
-        <h5 class="card-title">{{ task.title }}</h5>
-        <p class="card-text">{{ task.body }}</p>
-        <a class="btn btn-primary" herf="{{ url_for('toggle_task',task_id=task.id) }}">{% if task.is_finished %}
-            Finished{% else %}UnFinished{% endif %}</a>
+{#<div class="task card mb-3" date-herf="{{ url_for('.edit_task', task_id=task.id) }}" data-id="{{ task.id }}"#}
+{#     data-body="{{ task.body }}"#}
+{#     data-is_finished={{ task.is_finished|tojson }}>#}
+{#    <div class="row g-0">#}
+{#        <div class="col-md-4">#}
+{#            <img src="..." class="img-fluid rounded-start" alt="...">#}
+{#        </div>#}
+{#        <div class="col-md-8">#}
+{#            <div class="card-body">#}
+{#                <h5 class="card-title">{{ task.category.name }}</h5>#}
+{#                <p class="card-text">{{ task.content }}</p>#}
+{#                <a class="finished-btn btn btn-outline-secondary" data-href="{{ url_for('.toggle_task', task_id=task.id) }}"#}
+{#                   role="button">{% if task.is_finished %}Finished{% else %}Unfinished{% endif %}</a>#}
+{##}
+{#                <p class="card-text"><small class="text-muted">{{ task.timestamp }}</small></p>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+
+
+<div class="task card mb-3 position-relative" data-id="{{ task.id }}"
+     data-is_finished={{ task.is_finished|tojson }}>
+    <div class="card-header">
+        {{ task.category.name }}
+
     </div>
+    <div class="container">
+        <div class="card-body row">
+            <div class="col-8">
+                <h3>{{ task.title }}</h3>
+                <p class="card-text {% if task.is_finished %}finished-task{% else %}unfinished-task{% endif %}">{{ task.content }}</p>
+                <div class="comments">
+                    {% for comment in task.comments %}
+                        {% include 'todo/_comment.html' %}
+                    {% endfor %}
+                </div>
+                <a class="card-text"><small class="text-muted">{{ moment(task.timestamp).format('LL') }}</small></a>
+                <div>Deadline: <a class="card-text"><small class="text-muted">{{ moment(task.deadline).format('LL') }}</small></a></div>
+            </div>
+            <div class="col-4">
+
+                <a class="finished-btn btn btn-outline-secondary"
+                   data-href="{{ url_for('.toggle_task', task_id=task.id) }}"
+                   role="button">{% if task.is_finished %}Finished{% else %}Unfinished{% endif %}</a>
+            </div>
+            <div class="row">
+                <div class="collapse" id="collapseExample{{ task.id }}">
+                    <form method="POST">
+                        <div class="input-group mb-3">
+                            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            <input class="comment-input"
+                                   data-href="{{ url_for('todo.new_comment',task_id=task.id) }}"
+                                   type="text"
+                                   placeholder="Create new comment" autocomplete="off" autofocus
+                                   required>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <span class="position-absolute top-0 end-0">
+        <a class="btn btn-secondary" data-bs-toggle="collapse" href="#collapseExample{{ task.id }}" role="button"
+           aria-expanded="false"
+           aria-controls="collapseExample{{ task.id }}">
+            Comment
+        </a>
+        <button type="button" class="btn-close delete-btn" data-href="{{ url_for('.delete_task', task_id=task.id) }}"
+                aria-label="Close"></button>
+    </span>
+
 </div>
